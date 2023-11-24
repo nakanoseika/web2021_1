@@ -1,10 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('test2.db');
+const db = new sqlite3.Database('test3.db');
 
 let schema = `
-create table maker(
+create table series(
   id integer primary key,
-  name text not null
+  series_name text not null
 );
 `
 
