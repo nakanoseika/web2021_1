@@ -2,9 +2,11 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test3.db');
 
 let schema = `
-create table series(
-  id integer primary key,
-  series_name text not null
+create table cm(
+  character_id integer,
+  magic_id integer,
+  foreign key (character_id) references character(id),
+  foreign key (magic_id) reeferences magic(id)
 );
 `
 
