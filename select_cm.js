@@ -2,12 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test3.db');
 
 let sql = `
-select character.id as character_id,
-character.name, magic.id as magic_id,
-magic.magic_name
-from cm
-join character on cm.character_id = character.id
-join magic on cm.magic_id = magic.id;
+select id, character_id, magic_id  from cm ;
 `
 
 db.serialize( () => {
@@ -17,7 +12,7 @@ db.serialize( () => {
       return;
     }
     for( let data of row ) {
-      console.log(   data.name + ' : '+ data.magic_id + data.magic_name );
+      console.log( data.id + ' : ' + data.character_name+ ' : ' + data.magic_name  );
     }
   });
 });

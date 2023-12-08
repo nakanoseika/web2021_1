@@ -3,10 +3,11 @@ const db = new sqlite3.Database('test3.db');
 
 let schema = `
 create table cm(
+  id integer primary key,
   character_id integer,
   magic_id integer,
   foreign key (character_id) references character(id),
-  foreign key (magic_id) reeferences magic(id)
+  foreign key (magic_id) references magic(id)
 );
 `
 
