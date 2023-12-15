@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('test.db');
+const db = new sqlite3.Database('test3.db');
 
 app.set('view engine', 'ejs');
 app.use("/public", express.static(__dirname + "/public"));
@@ -26,6 +26,20 @@ app.get("/db", (req, res) => {
         })
     })
 })
+
+app.get("/magic", (req, res) => {
+    db.serialize( () => {
+        db.all("select character.id as character_id,character.name as character_name , magic.id ,magic.magic_name from cm join character on cm.character_id = character.id join magic on cm.magic_id = magic.id;", 
+               (error, row) => {
+            if( error ) {
+                res.render('show', {mes:"エラーです"});
+            }
+            res.render('test3', {data:row});
+        })
+    })
+})
+
+
 app.get("/top", (req, res) => {
     //console.log(req.query.pop);    // ①
     let desc = "";

@@ -12,7 +12,7 @@ db.serialize( () => {
       return;
     }
     for( let data of row ) {
-      console.log( data.id + ' : ' + data.character_name+ ' : ' + data.magic_name  );
+      console.log( data.id + ' : ' + data.character_id+ ' : ' + data.magic_id  );
     }
   });
 });

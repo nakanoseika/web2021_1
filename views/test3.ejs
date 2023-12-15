@@ -1,0 +1,23 @@
+          <!Doctype html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Show message</title>
+          </head>
+          <body>
+            <h2>ハリーポッター</h2>
+            <table>
+                <% for( let row of data ) { %>
+                  <tr>
+                      
+                      <td><%= row.character_id %></td>
+                    <td><%= row.character_name %></td>
+                      <td><%= row.magic_id %></td>
+                    <td><%= row.magic_name %></td>
+                    
+                  </tr>
+                <% } %>
+            </table>
+                  <a href="/db">タイトル</a><br>
+          </body>
+          </html>
