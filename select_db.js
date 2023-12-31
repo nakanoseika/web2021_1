@@ -7,7 +7,8 @@ character.name, magic.id as magic_id,
 magic.magic_name
 from cm
 join character on cm.character_id = character.id
-join magic on cm.magic_id = magic.id;
+join magic on cm.magic_id = magic.id
+where character.id = 3;
 `
 
 db.serialize( () => {

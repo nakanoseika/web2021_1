@@ -2,7 +2,7 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("test3.db");
 
 let sql = `
-insert into magic ("magic_name","mean") values ("エクスぺりアムス","武器よ去れ");
+insert into cm ("character_id","magic_id") values ("7","13");
 
 
 `;
