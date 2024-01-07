@@ -6,18 +6,17 @@
           </head>
           <body>
             <h2>使用魔法一覧</h2>
+            <h5>注：一覧に表示されている魔法は全てではなく、一部のみ抜粋している。</h5>
             <table>
                 <% for( let row of data ) { %>
                   <tr>
-                      
-                      <td><%= row.character_id %></td>
-                    <td><%= row.character_name %></td>
-                      <td><%= row.magic_id %></td>
+                     
                     <td><%= row.magic_name %></td>
                     
                   </tr>
                 <% } %>
             </table>
-                  <a href="/db">タイトル</a><br>
+                  <a href="/public/Harry Potter.html">キャラクター一覧へ戻る</a><br>
+                  <a href="/magicnum">全魔法一覧へ</a><br>
           </body>
           </html>
